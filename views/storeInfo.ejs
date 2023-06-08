@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/css/register.css" /> -->
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1 id="page-title">Welcome (store Name)</h1>
+    <p>Please Add Your Store Information Below</p>
+
+    <form action="/user/dashboad/storeInfo/creat-store" method="post" enctype="multipart/form-data">
+      <h1>Add Store Info</h1>
+      <br /><br />
+
+      <label for="log0">Add Your Store Logo : </label>
+      <input type="file" name="logo" id="logo" required />
+      <br /><br />
+
+      <label for="address">Address :</label>
+      <textarea
+        name="address"
+        id="address"
+        cols="30"
+        rows="10"
+        placeholder="Enter Your Address..."
+        required
+      ></textarea>
+      <br /><br />
+
+      <label for="gst">Gst no. :</label>
+      <input
+        type="text"
+        name="gst"
+        id="gst"
+        placeholder="Your Gst Number..."
+        required
+      />
+      <br /><br />
+
+      <label for="storeTime">Store Time :</label>
+      <input type="time" name="openTime" id="openTime" required />
+
+      <input type="time" name="closeTime" id="closeTime" required />
+      <br /><br />
+
+      <input type="submit" id="storeInfo" value="Add Details" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1 id="page-title">Welcome</h1>
+
+    <form action="/user/create" method="post">
+      <h1>Sign Up</h1>
+
+      <label for="name">Name :</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="Your Name..."
+        required
+      />
+
+      <label for="name">Business Name :</label>
+      <input
+        type="text"
+        name="businessName"
+        id="name"
+        placeholder="Bussiness Name..."
+        required
+      />
+
+      <label for="email">Email :</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Your Email..."
+        required
+      />
+
+      <label for="password">Password :</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Your Password..."
+        required
+      />
+
+      <label for="confirm_password">Confirm Password:</label>
+      <input
+        type="password"
+        name="confirm_password"
+        id="confirm_password"
+        placeholder="Confirm Password..."
+        required
+      />
+
+      <input type="submit" id="register" value="Register" />
+
+      <div id="login-in">
+        Already have an account? <a href="/user/login">Login here</a>
+      </div>
+    </form>
+  </body>
+</html>
