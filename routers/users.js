@@ -13,8 +13,10 @@ router.post("/create", userDetail.create);
 // use passport as a middleware to authenticate
 router.post("/create-session", passport.authenticate(
     "local",        // which method use
-    {failureRedirect : "/users/sign-in"},
+    {failureRedirect : "/user/login"},
 ), userDetail.createSession);
+
+router.get('/sign-out', userDetail.destroySession);
 
 // login register page
 router.use("/dashboad", require("./dashboad"));

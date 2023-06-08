@@ -22,6 +22,15 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
+
+    // whatever post we going to created is link with the user schema
+
+    store : {
+      // type is a refrance
+      type : mongoose.Schema.Types.ObjectId,
+      ref : "Store"
+  },
   },
   {
     timestamps: true,

@@ -1,0 +1,35 @@
+
+<header>
+    
+
+    <h2 id="header-titleName">
+            Shopify
+    </h2>
+
+    <ul id="header-ul">
+
+        <% if (locals.user) {%>
+
+            <li class="header-li">
+                <a href="/user/profile"> <%= user.name %> </a>
+            </li>
+
+            <li class="header-li">
+                <a href="/user/sign-out">Sign Out</a>
+            </li>
+
+        <% } else { %>
+
+            <li class="header-li">
+                <a href="/user/login">Sign In</a>
+            </li>
+
+            <li class="header-li">
+                <a href="/user/register">Sign Up</a>
+            </li>
+
+        <% } %>
+
+    </ul>
+
+</header>

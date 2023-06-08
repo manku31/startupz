@@ -2,6 +2,10 @@ const User = require("../models/Users");
 
 // redirect to login page
 module.exports.login = function (req, res) {
+  // its restrick the user to signup page because he already sign up
+  if (req.isAuthenticated()) {
+    return res.redirect("/user/dashboad");
+  }
   return res.render("login", {
     title: "Login",
   });
@@ -9,6 +13,10 @@ module.exports.login = function (req, res) {
 
 // redirect to Register Page
 module.exports.register = function (req, res) {
+  // its restrick the user to signup page because he already sign up
+  if (req.isAuthenticated()) {
+    return res.redirect("/user/dashboad");
+  }
   return res.render("register", {
     title: "Register",
   });
@@ -46,4 +54,13 @@ module.exports.create = async function (req, res) {
 // creating session
 module.exports.createSession = function (req, res) {
   return res.redirect("dashboad");
+};
+
+module.exports.destroySession = function (req, res) {
+  // this function is given by passport.js
+  req.logout(function (err) {
+    console.log(err);
+  }); // pre define
+
+  return res.redirect("/");
 };

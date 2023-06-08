@@ -1,52 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="/css/register.css" /> -->
-    <title><%= title %></title>
-  </head>
-  <body>
-    <h1 id="page-title">Welcome (store Name)</h1>
-    <p>Please Add Your Store Information Below</p>
+<% if( locals.user.store) { %>
+<div>
+  <p>Owner Name : <%= locals.user.name%></p>
+  <p>Bussiness Name: <%= locals.user.businessName %></p>
 
-    <form action="/user/dashboad/storeInfo/creat-store" method="post" enctype="multipart/form-data">
-      <h1>Add Store Info</h1>
-      <br /><br />
+  <p>Email : <%= locals.user.email%></p>
 
-      <label for="log0">Add Your Store Logo : </label>
+  <p>Store Address : <%= locals.user.store.address%></p>
+
+  <p>Store Gst no. : <%= locals.user.store.gst%></p>
+  <p>
+    Store Timing : <%= locals.user.store.openTime%> to <%=
+    locals.user.store.closeTime%>
+  </p>
+
+  <button><a href="/user/dashboad/storeinfo/destroy">Delete</a></button>
+</div>
+<%} else { %>
+
+<h1 id="page-title">Welcome <%= locals.user.name%></h1>
+<p>Please Add Your Store Information Below</p>
+
+<form action="/user/dashboad/storeinfo/creat-store" method="post">
+  <h1>Add Store Info</h1>
+  <br /><br />
+
+  <!-- <label for="logo">Add Your Store Logo : </label>
       <input type="file" name="logo" id="logo" required />
-      <br /><br />
+      <br /><br /> -->
 
-      <label for="address">Address :</label>
-      <textarea
-        name="address"
-        id="address"
-        cols="30"
-        rows="10"
-        placeholder="Enter Your Address..."
-        required
-      ></textarea>
-      <br /><br />
+  <label for="address">Address :</label>
+  <textarea
+    name="address"
+    id="address"
+    cols="30"
+    rows="1"
+    placeholder="Enter Your Address..."
+    required
+  ></textarea>
+  <br /><br />
 
-      <label for="gst">Gst no. :</label>
-      <input
-        type="text"
-        name="gst"
-        id="gst"
-        placeholder="Your Gst Number..."
-        required
-      />
-      <br /><br />
+  <label for="gst">Gst no. :</label>
+  <input
+    type="text"
+    name="gst"
+    id="gst"
+    placeholder="Your Gst Number..."
+    required
+  />
+  <br /><br />
 
-      <label for="storeTime">Store Time :</label>
-      <input type="time" name="openTime" id="openTime" required />
+  <label for="storeTime">Store Time :</label>
+  <input type="time" name="openTime" id="openTime" required />
 
-      <input type="time" name="closeTime" id="closeTime" required />
-      <br /><br />
+  <input type="time" name="closeTime" id="closeTime" required />
+  <br /><br />
 
-      <input type="submit" id="storeInfo" value="Add Details" />
-    </form>
-  </body>
-</html>
+  <input type="submit" id="storeInfo" value="Add Details" />
+</form>
+<% } %>

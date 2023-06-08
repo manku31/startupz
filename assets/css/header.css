@@ -1,0 +1,36 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: #0984e3;
+}
+
+#header-titleName {
+    margin-left: 10px;
+}
+
+#header-ul {
+    list-style-type: none;
+    display: flex;
+    width: 10%;
+    justify-content: baseline;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.header-li {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: greenyellow;
+}
+ 
+#header-ul :hover {
+    background-color: whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -1,7 +1,7 @@
 const express = require("express");
 const port = 8000;
 const app = express();
-
+const expressLayout = require('express-ejs-layouts');
 const db = require("./config/mongoose");
 
 // use for session cookie
@@ -15,8 +15,15 @@ const MongoStore = require("connect-mongo");
 // this help to show the value which pass eg: form value
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // css and js path become static
 app.use(express.static("assets"));
+
+// Express ejs layout ==> page render
+app.use(expressLayout);
+// extract style and script from sub page to layout page
+app.set("layout extractStyles", true)
+app.set("layout extractScripts", true)
 
 // setup view engine
 app.set("view engine", "ejs");
