@@ -1,1 +1,69 @@
-<h1>This is Chategory</h1>
+<h1>This is Inventroy</h1>
+
+<form action="">
+  <label for="">Select Your Category</label>
+  <select id="category" onchange="updateSubcategories()" required>
+    <option disabled selected>Category</option>
+    <% for (const category in data) { %>
+    <option value="<%= category %>"><%= category %></option>
+    <%}%>
+  </select><br /><br />
+
+  <label for="">Select Your Subcategory</label>
+  <select id="subcategory" required>
+    <option disabled selected>Subategory</option>
+  </select><br /><br />
+
+  <label for="">Product Name : </label>
+  <input
+    type="text"
+    name="productname"
+    id="productname"
+    ,
+    placeholder="Product Name..."
+    required
+  />
+  <br /><br />
+
+  <label for="">MRP : </label>
+  <input
+    type="number"
+    name="mrp"
+    id="mrp"
+    ,
+    placeholder="Product MRP..."
+    required
+  /><br /><br />
+
+  <label for="">SP : </label>
+  <input
+    type="number"
+    name="sp"
+    id="sp"
+    ,
+    placeholder="Product SP..."
+    required
+  /><br /><br />
+
+  <label for="">QTY : </label>
+  <input
+    type="number"
+    name="qty"
+    id="qty"
+    ,
+    placeholder="Product QTY..."
+    required
+  /><br /><br />
+
+  <label for="">Image : </label>
+  <input
+    type="file"
+    name="productimg"
+    id="productimg"
+    placeholder="Product SP..."
+  /><br /><br />
+
+  <input type="submit" id="addproduct" value="Add Product" />
+</form>
+
+<script src="/js/srcipt.js"></script>

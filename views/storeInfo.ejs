@@ -1,5 +1,13 @@
 <% if( locals.user.store) { %>
 <div>
+
+  <br><br>
+  <img src="<%= logo %>" alt="<%= locals.user.name%>" width="100" />
+  <br><br>
+
+  <img src="C:\Users\psingh84\Desktop\startupz\assets\image\file-1686295483498.png" alt="2nd option">
+  <br><br>
+   
   <p>Owner Name : <%= locals.user.name%></p>
   <p>Bussiness Name: <%= locals.user.businessName %></p>
 
@@ -20,13 +28,13 @@
 <h1 id="page-title">Welcome <%= locals.user.name%></h1>
 <p>Please Add Your Store Information Below</p>
 
-<form action="/user/dashboad/storeinfo/creat-store" method="post">
+<form action="/user/dashboad/storeinfo/creat-store" method="post" enctype="multipart/form-data">
   <h1>Add Store Info</h1>
   <br /><br />
 
-  <!-- <label for="logo">Add Your Store Logo : </label>
-      <input type="file" name="logo" id="logo" required />
-      <br /><br /> -->
+  <label for="logo">Add Your Store Logo : </label>
+      <input type="file" name="file" id="logo" required />
+      <br /><br />
 
   <label for="address">Address :</label>
   <textarea

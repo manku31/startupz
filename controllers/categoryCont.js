@@ -6,8 +6,12 @@ const Subcatageory = require("../models/Subcategory");
 module.exports.category = async function (req, res) {
   try {
 
+    let subcatageory = await Subcatageory.find({user:req.user.id})
+    .populate("category",'category');
+
     return res.render("category", {
       title: "Add Category",
+      subcatageory,
     });
   } catch (err) {
     console.log("Error in showing Category Details ==> ", err);
@@ -38,7 +42,14 @@ module.exports.addCategory = async function (req, res) {
       user: req.user.id
     }
     
-    await Subcatageory.create(obj);
+    let subcategeory = await Subcatageory.create(obj);
+
+    let user = await User.findById(req.user._id);
+
+    if(user){
+      user.subcategeory = subcategeory._id;
+      user.save();
+    }
     // Subcatageory.save();
 
     return res.redirect("back");

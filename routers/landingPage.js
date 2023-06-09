@@ -6,3 +6,4 @@ const landingPage = require("../controllers/landingPageCont");
 router.get("/", landingPage.home);
 
 module.exports = router;
+

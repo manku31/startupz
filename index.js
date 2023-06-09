@@ -3,6 +3,8 @@ const port = 8000;
 const app = express();
 const expressLayout = require('express-ejs-layouts');
 const db = require("./config/mongoose");
+const multer = require('multer');
+const path = require("path")
 
 // use for session cookie
 const session = require("express-session"); // help to store session cookie
@@ -18,6 +20,8 @@ app.use(express.json());
 
 // css and js path become static
 app.use(express.static("assets"));
+
+app.use("/assets", express.static(__dirname + "/assets"));
 
 // Express ejs layout ==> page render
 app.use(expressLayout);

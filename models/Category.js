@@ -10,5 +10,5 @@ const addCategorySchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Catageory = mongoose.model('Catageory', addCategorySchema);
-module.exports = Catageory;
+const Categeory = mongoose.model('Categeory', addCategorySchema);
+module.exports = Categeory;

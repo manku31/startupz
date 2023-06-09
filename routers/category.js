@@ -4,9 +4,13 @@ const passport = require("passport");
 
 const addCategory = require("../controllers/categoryCont");
 
-router.get("/",passport.checkAuthentication, addCategory.category );
+router.get("/", passport.checkAuthentication, addCategory.category);
 
-router.post("/addCategory",passport.checkAuthentication, addCategory.addCategory);
+router.post(
+  "/addCategory",
+  passport.checkAuthentication,
+  addCategory.addCategory
+);
 
 // router.get("/destroy", storeInfo.destroy);
 module.exports = router;

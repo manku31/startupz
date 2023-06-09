@@ -10,4 +10,6 @@ router.use("/storeinfo", require("./storeInfo"));
 
 router.use("/category", require("./category"));
 
-module.exports = router;
+router.use("/inventory", require("./inventory"));
+
+module.exports = router; 
