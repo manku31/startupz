@@ -5,9 +5,10 @@ const Subcatageory = require("../models/Subcategory");
 
 module.exports.category = async function (req, res) {
   try {
-
-    let subcatageory = await Subcatageory.find({user:req.user.id})
-    .populate("category",'category');
+    let subcatageory = await Subcatageory.find({ user: req.user.id }).populate(
+      "category",
+      "category"
+    );
 
     return res.render("category", {
       title: "Add Category",
@@ -23,7 +24,9 @@ module.exports.category = async function (req, res) {
 module.exports.addCategory = async function (req, res) {
   try {
     let category = await Category.findOne({ category: req.body.category });
-    let subCatageory = await Subcatageory.findOne({ subcategory: req.body.subcategory });
+    let subCatageory = await Subcatageory.findOne({
+      subcategory: req.body.subcategory,
+    });
 
     if (!category) {
       category = await Category.create({
@@ -31,7 +34,7 @@ module.exports.addCategory = async function (req, res) {
       });
     }
 
-    if(subCatageory){
+    if (subCatageory) {
       console.log("This is already present");
       return res.redirect("back");
     }
@@ -39,14 +42,14 @@ module.exports.addCategory = async function (req, res) {
     let obj = {
       category: category.id,
       subcategory: req.body.subcategory,
-      user: req.user.id
-    }
-    
+      user: req.user.id,
+    };
+
     let subcategeory = await Subcatageory.create(obj);
 
     let user = await User.findById(req.user._id);
 
-    if(user){
+    if (user) {
       user.subcategeory = subcategeory._id;
       user.save();
     }

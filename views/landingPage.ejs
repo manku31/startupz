@@ -1,1 +1,26 @@
-<h1>This is Landing PAge</h1>
+<link rel="stylesheet" href="/css/landingpage.css">
+
+<h1>Welcome to Shopify</h1>
+
+
+<% for(store of store){ %>
+    <div class="stores-main-container">
+      <a href="/product/showproduct/<%=store.user._id%>">
+        <div>
+            <img src="/image/<%= store.logo %>" alt="<%= store.user.name%>" width="100">
+        </div>
+        <div class="stores-container">
+          <h2 class="store-name"><%= store.businessName %></h2>
+          <p>Ownwe Name : <%= store.user.name %></p>
+          <p>Address: <%= store.address %></p>
+          <p>GST: <%= store.gst %></p>
+          <p>Open Time:<%= store.openTime%></p>
+          <p>Close Time: <%= store.closeTime %></p>
+        </div>
+        <% if(locals.user && locals.user.id == store.userid){ %>
+        <a href="/store/delete/<%=store.id%>">Delete</a>
+        <% } %>
+      </a>
+    </div>
+    <% } %>
+

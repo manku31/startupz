@@ -12,4 +12,4 @@ router.use("/category", require("./category"));
 
 router.use("/inventory", require("./inventory"));
 
-module.exports = router; 
+module.exports = router;
