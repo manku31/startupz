@@ -1,18 +1,18 @@
 <h1>This is Inventroy</h1>
 
-<form action="">
+<form action="/user/dashboad/inventory/addinventory" method="post">
   <label for="">Select Your Category</label>
-  <select id="category" onchange="updateSubcategories()" required>
+  <select id="category" onchange="updateSubcategories()" name="category" required>
     <option disabled selected>Category</option>
     <% for (const category in data) { %>
     <option value="<%= category %>"><%= category %></option>
-    <%}%>
-  </select><br /><br />
+    <%}%></select
+  ><br /><br />
 
   <label for="">Select Your Subcategory</label>
-  <select id="subcategory" required>
-    <option disabled selected>Subategory</option>
-  </select><br /><br />
+  <select id="subcategory" name="subcategory" required>
+    <option disabled selected>Subategory</option></select
+  ><br /><br />
 
   <label for="">Product Name : </label>
   <input

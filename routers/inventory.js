@@ -4,11 +4,15 @@ const passport = require("passport");
 
 const addInventory = require("../controllers/inventroyCont");
 
-router.post("/",passport.checkAuthentication, addInventory.addInventory );
+router.post("/",passport.checkAuthentication, addInventory.inventory );
 
+// sending the data
 router.get("/",passport.checkAuthentication, addInventory.category );
 
+// sending data in json
 router.get("/ajax",passport.checkAuthentication, addInventory.getCategorys );
+
+router.post("/addinventory",passport.checkAuthentication, addInventory.addInventory );
 
 
 
