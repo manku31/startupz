@@ -3,6 +3,10 @@ const Store = require("../models/Stores");
 const Category = require("../models/Category");
 const Subcatageory = require("../models/Subcategory");
 const Inventory = require("../models/Inventory");
+const multerv = require("../config/multer");
+const upload = require("../config/multer");
+const path = require("path");
+
 
 // rendering the inventroy
 module.exports.inventory = async function (req, res) {
@@ -76,15 +80,17 @@ module.exports.getCategorys = async function (req, res) {
 // adding inventory to the mongoDB
 module.exports.addInventory = async function (req, res) {
   try {
+
     let inventory = await Inventory.create({
       productname: req.body.productname,
       mrp: req.body.mrp,
       sp: req.body.sp,
       qty: req.body.qty,
-      productimg: req.body.productimg,
+      productimg : req.file.filename,
       subcategory: req.body.subcategory,
       category: req.body.category,
-      userid: req.user.id
+      userid: req.user.id,
+      storeid: req.user.store,
     });
 
     return res.redirect("back");

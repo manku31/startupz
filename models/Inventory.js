@@ -29,10 +29,14 @@ const InventorySchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+    storeid: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Store",
+    },
     userid: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-    },
+    }
   },
   {
     timestamps: true,

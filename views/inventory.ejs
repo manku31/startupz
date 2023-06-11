@@ -1,6 +1,6 @@
 <h1>This is Inventroy</h1>
 
-<form action="/user/dashboad/inventory/addinventory" method="post">
+<form action="/user/dashboad/inventory/addinventory" method="post" enctype="multipart/form-data">
   <label for="">Select Your Category</label>
   <select id="category" onchange="updateSubcategories()" name="category" required>
     <option disabled selected>Category</option>
@@ -58,7 +58,7 @@
   <label for="">Image : </label>
   <input
     type="file"
-    name="productimg"
+    name="file"
     id="productimg"
     placeholder="Product SP..."
   /><br /><br />

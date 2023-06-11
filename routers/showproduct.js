@@ -5,5 +5,6 @@ const productCont = require("../controllers/showProductCont");
 
 router.get("/showproduct/:id", productCont.showproducts);
 
+router.get("/showProduct/:id/:search", productCont.showProductsAjax);
 
 module.exports = router;

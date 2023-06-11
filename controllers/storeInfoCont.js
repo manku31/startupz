@@ -9,17 +9,17 @@ module.exports.storeInfo = async function (req, res) {
   try {
     let user = await User.findById(req.user.id).populate("store");
 
-    let storedetails = await Store.findOne({ user: req.user.id });
-    if (storedetails != null) {
+    // let storedetails = await Store.findOne({ user: req.user.id });
+    // if (storedetails != null) {
 
-      const logoimg = path.join(
-        __dirname, "../assets/image/" + storedetails.logo);
-      return res.render("storeInfo", {
-        title: "Store Details",
-        user,
-        logo: logoimg,
-      });
-    }
+    //   const logoimg = path.join(
+    //     __dirname, "../assets/image/" + storedetails.logo);
+    //   return res.render("storeInfo", {
+    //     title: "Store Details",
+    //     user,
+    //     logo: logoimg,
+    //   });
+    // }
 
     return res.render("storeInfo", {
       title: "Store Details",

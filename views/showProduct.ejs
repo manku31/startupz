@@ -1,20 +1,23 @@
 <link rel="stylesheet" href="/css/productdetails.css" />
 
-<h1><%= store.user.businessName %></h1>
-<div class="main-container">
 
-    <form action="" method="post">
-        <input type="text" name="search" id="search" placeholder="Search Item..." required/>
-        <input type="submit" value="Search" id="search-btn">
-    </form>
-  
+
+<h1><%= store.user.businessName %></h1>
+
+
+
+<label for="">Search Your Product </label>
+<input type="text" id="searchBar" />
+<button id="searchBtn"  value="<%=store.id%>">Search</button>
+
+<div class="main-container">
   <% if(products){%> <% for(let i = 0; i < products.length; i++){%>
   <div class="product-body">
     <div class="card">
       <div class="header"><%= products[i].productname %></div>
       <div class="details">
         <div class="details-name">
-            <img src="/image/<%= store.logo %>" alt="Procut img" width="100" />
+            <img src="/image/<%= products[i].productimg %>" alt="Procut img" width="100" />
         </div>
       </div>
       <div class="body">
@@ -34,3 +37,5 @@
   <h3>No Products to display</h3>
   <% } %>
 </div>
+
+<script src="/js/searchProduct.js"></script>
