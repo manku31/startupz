@@ -1,3 +1,6 @@
+*{
+  font-family: sans-serif;
+}
 .card {
   width:fit-content;
   background-color: #9c3a3a;
@@ -40,5 +43,18 @@
   font-size: 16px;
 }
 
+#main-body {
+  text-align: center;
+}
 
+#searchBar {
+  height: auto;
+  width: 15%
+}
 
+/* #imgp{
+  margin-left: 20px;
+} */
+#card-div{
+  text-align: center;
+}

@@ -1,16 +1,15 @@
 <link rel="stylesheet" href="/css/landingpage.css">
 
-<h1>Welcome to Shopify</h1>
-
+<h1 id="headtag">Welcome to Shopify</h1>
 
 <% for(store of store){ %>
     <div class="stores-main-container">
-      <a href="/product/showproduct/<%=store.user._id%>">
-        <div>
+      <a href="/product/showproduct/<%=store.user._id%>" class="atag">
+        <div id="pimg">
             <img src="/image/<%= store.logo %>" alt="<%= store.user.name%>" width="100">
         </div>
         <div class="stores-container">
-          <h2 class="store-name"><%= store.businessName %></h2>
+          <h2 class="store-name"><%= store.user.businessName %></h2>
           <p>Ownwe Name : <%= store.user.name %></p>
           <p>Address: <%= store.address %></p>
           <p>GST: <%= store.gst %></p>

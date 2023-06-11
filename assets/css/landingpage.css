@@ -1,9 +1,17 @@
+#headtag {
+    text-align: center;
+}
+
 .stores-main-container{
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: lightcyan;
+    border : 1px solid black;
+    border-radius: 20px;
     margin: 10px 0px;
+    margin-left: 35%;
 }
 
 .stores-container{
@@ -15,4 +23,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;    
+}
+
+.atag{
+    display: flex;
+    align-items: center;
+}
+
+#pimg{
+    margin-right: 15px;
 }

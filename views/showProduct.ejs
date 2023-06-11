@@ -1,26 +1,28 @@
 <link rel="stylesheet" href="/css/productdetails.css" />
 
+<div id="main-body">
+  <h1><%= store.user.businessName %></h1>
 
-
-<h1><%= store.user.businessName %></h1>
-
-
-
-<label for="">Search Your Product </label>
-<input type="text" id="searchBar" />
-<button id="searchBtn"  value="<%=store.id%>">Search</button>
+  <label for=""><b>Search Your Product </b></label> <br>
+  <input type="text" id="searchBar" />
+  <button id="searchBtn" value="<%=store.id%>">Search</button>
+</div>
+<br /><br />
 
 <div class="main-container">
-  <% if(products){%> <% for(let i = 0; i < products.length; i++){%>
+  <% if(products.length > 0){%> <% for(let i = 0; i < products.length; i++){%>
   <div class="product-body">
     <div class="card">
       <div class="header"><%= products[i].productname %></div>
-      <div class="details">
-        <div class="details-name">
-            <img src="/image/<%= products[i].productimg %>" alt="Procut img" width="100" />
-        </div>
-      </div>
+
       <div class="body">
+          <div class="details-name">
+            <img
+              src="/image/<%= products[i].productimg %>"
+              alt="Procut img"
+              width="100"
+            />
+          </div>
         <div class="details">
           <div class="details-name">MRP: <%= products[i].mrp %></div>
         </div>
@@ -34,7 +36,7 @@
     </div>
   </div>
   <% } %> <% }else{%>
-  <h3>No Products to display</h3>
+  <h3>No Products Available In This Shop</h3>
   <% } %>
 </div>
 

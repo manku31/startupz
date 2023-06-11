@@ -36,7 +36,7 @@ module.exports.showProductsAjax = async (req, res) => {
       productname: search, // Use the $in operator to match productName with the regex
     });
 
-    console.log(products);
+    // console.log(products);
     if (req.xhr) {
       return res.status(200).json({
         data: products,

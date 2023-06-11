@@ -25,6 +25,7 @@ module.exports.addCategory = async function (req, res) {
   try {
     let category = await Category.findOne({ category: req.body.category });
     let subCatageory = await Subcatageory.findOne({
+      user : req.user.id,
       subcategory: req.body.subcategory,
     });
 

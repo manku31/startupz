@@ -1,0 +1,39 @@
+* {
+    font-family: sans-serif
+}
+
+#content-store {
+    background-color: aqua;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin-left: 550px;
+}
+
+#content-img {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+form {
+    width: 40%;
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 30%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#addinfo {
+    margin-left: 230px;
+}

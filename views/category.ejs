@@ -1,28 +1,39 @@
-<br /><br />
+<style>
+  * {
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .input-box {
+    height: auto;
+    width: 15%;
+  }
+</style>
+
+<h1>Add What Your Going To Sell</h1>
 <form action="/user/dashboad/category/addCategory" method="post">
-  <label for="addcategory">Add Category</label>
+  <label for="addcategory"><b>Add Category</b> </label> <br />
   <input
     type="text"
     name="category"
     id="category"
     placeholder="Your Category..."
+    class="input-box"
     required
-  />
+  /><br />
   <br />
   <br />
-  <label for="">Add Category</label>
+  <label for=""><b>Add Category</b> </label><br />
   <input
     type="text"
     name="subcategory"
     id="subcategory"
     placeholder="Your Sub Category..."
+    class="input-box"
     required
   />
+  <br />
   <br />
 
   <input type="submit" id="category" value="Add Details" />
 </form>
-
-<%= subcatageory %>
-
-
