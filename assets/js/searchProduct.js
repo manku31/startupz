@@ -11,7 +11,7 @@ function getInputValue() {
   if (searchedString.length > 1) {
     getProduct(searchedString);
   }
-  console.log("inputBox.value", searchedString);
+  // console.log("inputBox.value", searchedString);
 }
 
 // display Product
@@ -30,7 +30,7 @@ async function displayProduct(data) {
   const mainContainer = document.querySelector(".main-container");
 
   if (data.length > 0) {
-    console.log("data", data);
+    // console.log("data", data);
     mainContainer.innerHTML = "";
 
     mainContainer.innerHTML = `<div class="card" id="card-div">

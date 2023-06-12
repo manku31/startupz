@@ -27,7 +27,7 @@ module.exports.showproducts = async (req, res) => {
 
 module.exports.showProductsAjax = async (req, res) => {
   try {
-    console.log(req.params.id + " " + req.params.search);
+    // console.log(req.params.id + " " + req.params.search);
     const search = req.params.search;
     const regex = new RegExp(search, "i"); // Create a regular expression with 'i' flag for case-insensitive search
 
@@ -46,5 +46,5 @@ module.exports.showProductsAjax = async (req, res) => {
     console.log(`error in fetching the products form inventory ${error}`);
     return;
   }
-  // /product/showProduct/<%=storeDetails.userid%>
+ 
 };
